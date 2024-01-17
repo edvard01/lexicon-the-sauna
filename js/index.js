@@ -22,19 +22,27 @@ while (notOptimal) {
 
     if (tempInCels < 73) {
       alert(
-        "Temperature is too low to be acceptable. Please turn up the heat."
+        `${tempInCels} is too low to be acceptable. Please turn up the heat by ${
+          optimalTemp - tempInCels
+        } degrees.`
       );
     } else if (tempInCels > 77) {
       alert(
-        "Temperature is too high to be acceptable. Please turn down the heat."
+        `${tempInCels} is too high to be acceptable. Please turn down the heat by ${
+          tempInCels - optimalTemp
+        } degrees.`
       );
     } else if (tempInCels >= acceptableTempFloor && tempInCels < optimalTemp) {
       alert(
-        "Temperature is acceptable but too cold to be considered optimal. If you wish for the tempreature to be considered optimal then please raise it."
+        `${tempInCels} is acceptable but too cold to be considered optimal. If you wish for the tempreature to be considered optimal then please raise it by ${
+          optimalTemp - tempInCels
+        }.`
       );
     } else if (tempInCels > optimalTemp && tempInCels <= acceptableTempRoof) {
       alert(
-        "Temperature is acceptable but too hot to be considered optimal. If you wish for the temperature to be considered optimal then please lower it."
+        `${tempInCels} is acceptable but too hot to be considered optimal. If you wish for the tempreature to be considered optimal then please raise it by ${
+          tempInCels - optimalTemp
+        }.`
       );
     } else if (tempInCels === optimalTemp) {
       alert("Temperature is optimal! Closing user input.");
